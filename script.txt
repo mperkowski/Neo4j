@@ -1,0 +1,79 @@
+CREATE (p:pizza { name : "Margherita", cena: 11})
+CREATE (p1:pizza { name : "Firenze" , cena: 12})
+CREATE (p2:pizza { name : "Pomodoro", cena: 12 })
+CREATE (p3:pizza { name : "Nati", cena: 12 })
+CREATE (p4:pizza { name : "Napoli" , cena: 13})
+CREATE (p5:pizza { name : "Salami" , cena: 13})
+CREATE (p6:pizza { name : "Hawaii" , cena: 14})
+CREATE (p7:pizza { name : "Capriccosa", cena: 14})
+CREATE (p8:pizza { name : "Momento" , cena: 14})
+CREATE (p9:pizza { name : "Sole" , cena: 14})
+
+
+CREATE (s:skladnik { name : "sos" })
+CREATE (s1:skladnik { name : "ser" })
+CREATE (s2:skladnik { name : "oregano" })
+CREATE (s3:skladnik { name : "pieczarki" })
+CREATE (s4:skladnik { name : "cebula" })
+CREATE (s5:skladnik { name : "salami" })
+CREATE (s6:skladnik { name : "szynka" })
+CREATE (s7:skladnik { name : "pomidor"})
+CREATE (s8:skladnik { name : "brzoskwinie" })
+CREATE (s9:skladnik { name : "ananas" })
+CREATE (s10:skladnik { name : "jajko" })
+
+
+
+CREATE (p)-[:ZAWIERA]->(s)
+CREATE (p)-[:ZAWIERA]->(s1)
+
+CREATE (p1)-[:ZAWIERA]->(s)
+CREATE (p1)-[:ZAWIERA]->(s1)
+CREATE (p1)-[:ZAWIERA]->(s3)
+CREATE (p1)-[:ZAWIERA]->(s4)
+
+CREATE (p2)-[:ZAWIERA]->(s)
+CREATE (p2)-[:ZAWIERA]->(s1)
+CREATE (p2)-[:ZAWIERA]->(s7)
+
+CREATE (p3)-[:ZAWIERA]->(s)
+CREATE (p3)-[:ZAWIERA]->(s1)
+CREATE (p3)-[:ZAWIERA]->(s8)
+
+CREATE (p4)-[:ZAWIERA]->(s)
+CREATE (p4)-[:ZAWIERA]->(s1)
+CREATE (p4)-[:ZAWIERA]->(s6)
+
+CREATE (p5)-[:ZAWIERA]->(s)
+CREATE (p5)-[:ZAWIERA]->(s1)
+CREATE (p5)-[:ZAWIERA]->(s5)
+
+CREATE (p6)-[:ZAWIERA]->(s)
+CREATE (p6)-[:ZAWIERA]->(s1)
+CREATE (p6)-[:ZAWIERA]->(s6)
+CREATE (p6)-[:ZAWIERA]->(s9)
+
+CREATE (p7)-[:ZAWIERA]->(s)
+CREATE (p7)-[:ZAWIERA]->(s1)
+CREATE (p7)-[:ZAWIERA]->(s6)
+CREATE (p7)-[:ZAWIERA]->(s3)
+
+CREATE (p8)-[:ZAWIERA]->(s)
+CREATE (p8)-[:ZAWIERA]->(s1)
+CREATE (p8)-[:ZAWIERA]->(s5)
+CREATE (p8)-[:ZAWIERA]->(s3)
+
+
+CREATE (p9)-[:ZAWIERA]->(s)
+CREATE (p9)-[:ZAWIERA]->(s1)
+CREATE (p9)-[:ZAWIERA]->(s6)
+CREATE (p9)-[:ZAWIERA]->(s10)
+
+
+CREATE (weg:rodzaj {name: "wegetarianska"})
+
+CREATE (p)-[:JEST]->(weg)
+CREATE (p1)-[:JEST]->(weg)
+CREATE (p2)-[:JEST]->(weg)
+CREATE (p3)-[:JEST]->(weg)
+CREATE (p)-[:JEST]->(weg)
